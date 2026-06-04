@@ -1,0 +1,159 @@
+:root {
+    --primary: #00f2ff;
+    --secondary: #7000ff;
+    --bg: #050505;
+}
+
+body.booking-page {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.back-link { color: var(--primary); text-decoration: none; font-weight: bold; }
+.booking-header h1 span { color: var(--primary); }
+
+.event-summary h2 { font-size: 1.2rem; margin: 0; }
+.event-summary p { color: #888; font-size: 0.9rem; }
+
+.stadium-map {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 1px solid #333;
+}
+
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; margin-bottom: 8px; color: #aaa; font-size: 0.8rem; }
+
+select, input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.total-display {
+    background: rgba(0, 242, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#totalPrice { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
+
+.confirm-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    border: none;
+    border-radius: 12px;
+    color: black;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.confirm-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 242, 255, 0.4);
+}
+/* Modal Overlay - Darkens and blurs the background */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(8px); /* Blurred background effect */
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content Box */
+.modal-card {
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border-top: 4px solid var(--secondary); /* Purple accent for HHT */
+    animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-icon { font-size: 3rem; margin-bottom: 10px; }
+
+.modal-details {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.modal-details p { margin: 8px 0; color: #ccc; }
+.modal-details b { color: var(--primary); }
+
+.modal-actions { display: flex; gap: 15px; }
+
+.cancel-btn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #444;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pay-btn {
+    flex: 2;
+    background: var(--primary);
+    color: black;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+}

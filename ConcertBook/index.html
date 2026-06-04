@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConcertBook | Home</title>
+    <link rel="icon" href="music-svgrepo-com.svg" type="image/svg">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo"><h1>Concert<span>Book</span></h1></div>
+        
+        <nav class="desktop-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="concerts.html">Concerts</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="profile-section">
+            <div class="profile-icon" onclick="toggleProfile()">
+                <img src="profile-circle-svgrepo-com.svg" alt="Profile">
+            </div>
+            <div id="profileDropdown" class="profile-dropdown">
+                <div class="dropdown-header">
+                    <p id="userName">Guest Fan</p>
+                    <small id="userEmail">fan@concertbook.com</small>
+                </div>
+                <hr>
+                <a href="profile.html">Profile</a>
+                <a href="myticket.html">My Tickets</a>
+                <a href="settings.html">Settings</a>
+                <a href="login.html" class="logout" onclick="logout(event)">Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero" id="hero-slider">
+    <div class="hero-layer slide-1" id="layer1"></div>
+    <div class="hero-layer slide-2" id="layer2"></div>
+    
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+        <h1>Welcome to ConcertBook</h1>
+        <p>Book Live Concerts and Stream Instantly</p>
+        <a href="concerts.html" class="cta-btn">Browse Events</a>
+    </div>
+</section>
+
+    <section class="content-section">
+        <h2 class="section-title">Popular Concerts</h2>
+        
+        <div class="concert-grid">
+            <div class="concert-card">
+                <div class="card-img">
+                    <img src="arr.iw0xrbrkyes4geolrojp.jpg" alt="AR Rahman">
+                    <span class="price-tag">₹1,799+</span>
+                </div>
+                <div class="card-info">
+                    <p class="date">Sat, 14 Feb • 6:30 PM</p>
+                    <h3>The Wonderment Tour | A.R. Rahman Live</h3>
+                    <p class="venue">Jawaharlal Nehru Stadium, Chennai</p>
+                    <a href="wonder.html" class="know-more">Know More</a>
+                </div>
+            </div>
+
+            <div class="concert-card">
+                <div class="card-img">
+                    <img src="hiphop.yggzf92pcz1qoon0i2qe.jpg" alt="Hiphop Tamizha">
+                    <span class="price-tag">₹1,499+</span>
+                </div>
+                <div class="card-info">
+                    <p class="date">Sat, 07 Mar • 6:30 PM</p>
+                    <h3>Hip Hop Tamizha Aadhi: ROTDM</h3>
+                    <p class="venue">YMCA Ground, Nandanam, Chennai</p>
+                    <a href="homecf.html" class="know-more">Know More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-more-container">
+            <a href="concerts.html" class="outline-btn">View More Concerts</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <h3>🎵 ConcertBook</h3>
+        <p>Your gateway to unforgettable live music experiences.</p>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/?hl=en">Instagram</a> | <a href="http://facebook.com/">Facebook</a> | <a href="https://www.youtube.com">YouTube</a>
+        </div>
+        <p class="copyright">&copy; 2026 ConcertBook. All rights reserved.</p>
+    </div>
+</footer>
+
+    <div id="logoutModal" class="modal-overlay">
+    <div class="modal-card glass-card">
+        <div class="modal-icon">🚪</div>
+        <h2>Ready to Leave?</h2>
+        <p style="color: #888; margin: 15px 0;">Are you sure you want to log out of ConcertBook?</p>
+        <div class="modal-actions">
+            <button class="cancel-btn" onclick="closeLogoutModal()">Stay</button>
+            <button class="logout-confirm-btn" onclick="finalizeLogout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

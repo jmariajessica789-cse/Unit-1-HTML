@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Receipt | ConcertBook</title>
+    <link rel="stylesheet" href="stylebookwon.css">
+    <style>
+        .qr-code { background: white; padding: 10px; border-radius: 10px; width: 120px; margin: 20px auto; }
+        .receipt-id { font-family: monospace; color: var(--primary); font-size: 1.2rem; }
+    </style>
+</head>
+<body class="booking-page">
+    <div class="booking-container glass-card" style="text-align: center;">
+        <div class="modal-icon">✅</div>
+        <h1>Payment Successful!</h1>
+        <p>Your seats are secured for <span id="rEventName" style="color:var(--primary); font-weight:800;"></span>.</p>
+        
+        <div class="modal-details">
+            <p><b>Booking ID:</b> <span id="rID" class="receipt-id"></span></p>
+            <p><b>Total Paid:</b> <span id="rAmount"></span></p>
+        </div>
+
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ConcertBook" width="100%">
+        </div>
+
+        <button class="confirm-btn" onclick="window.location.href='index.html'">Back to Home</button>
+        <br><br>
+        <a href="myticket.html" style="color: white; text-decoration: none; opacity: 0.7;">View My Tickets</a>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Grab the most recent ticket from your history
+        const tickets = JSON.parse(localStorage.getItem('myTickets')) || [];
+        const lastTicket = tickets[tickets.length - 1];
+
+        if (lastTicket) {
+            // Update the text dynamically
+            // This targets the <span> inside your success message
+            const eventSpan = document.querySelector('.booking-container p span');
+            if (eventSpan) eventSpan.innerText = lastTicket.event;
+
+            // Fill in the details
+            document.getElementById('rID').innerText = lastTicket.bookingID;
+            document.getElementById('rAmount').innerText = lastTicket.amount;
+
+            // Update the QR code with the unique ID
+            const qrImg = document.querySelector('.qr-code img');
+            if (qrImg) {
+                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${lastTicket.bookingID}`;
+            }
+        }
+    });
+
+    const history = JSON.parse(localStorage.getItem('myTickets')) || [];
+const currentTicket = history[history.length - 1]; // Get the one we just paid for
+
+if (currentTicket) {
+    document.getElementById('receiptEvent').innerText = currentTicket.event;
+    document.getElementById('receiptID').innerText = currentTicket.bookingID;
+}
+</script>
+</script>
+</script>
+</body>
+</html>

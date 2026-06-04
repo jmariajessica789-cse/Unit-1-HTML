@@ -1,0 +1,272 @@
+:root {
+    --primary: #00f2ff;
+    --secondary: #7000ff;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+    --text: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+.main-header {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h1 { font-size: 1.5rem; margin: 0; }
+.logo span { color: var(--primary); }
+
+.desktop-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.desktop-nav a { text-decoration: none; color: #94a3b8; margin-left: 20px; font-weight: 500; transition: 0.3s; }
+.desktop-nav a.active { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 5px; }
+.desktop-nav a:hover { color: var(--white); }
+/* Profile Dropdown */
+.profile-section { position: relative; }
+.profile-icon { cursor: pointer; width: 40px; height: 40px; }
+.profile-icon img { width: 100%; filter: invert(1); }
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 12px;
+    width: 200px;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.profile-dropdown.show { display: block; }
+
+.dropdown-header p { margin: 0; font-weight: bold; color: var(--primary); }
+.dropdown-header small { color: #888; }
+
+.profile-dropdown a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+    font-size: 0.9rem;
+}
+
+.profile-dropdown a:hover { color: var(--primary); }
+.logout { color: #ff4b4b !important; }
+
+.hero {
+    height: 60vh; /* This sets the frame height */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #000; /* Fallback */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; /* The bottom-most layer */
+    transition: opacity 1.2s ease-in-out;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark wash */
+    z-index: 2; /* Sits on top of images */
+    pointer-events: none; /* Allows clicks to pass through to the button */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10; /* Highest layer - text and button */
+    text-align: center;
+    color: white;
+}
+
+/* Ensure the button is visible and high-contrast */
+.cta-btn {
+    display: inline-block; /* Essential for padding/margin to work */
+    margin-top: 25px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    padding: 15px 35px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(0, 242, 255, 0.3);
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 242, 255, 0.5);
+}
+
+/* Concert Cards */
+.content-section { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+.section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+
+.concert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.concert-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.concert-card:hover { transform: translateY(-10px); }
+
+.card-img { position: relative; height: 350px; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.price-tag {
+    position: absolute;
+    bottom: 15px; right: 15px;
+    background: var(--secondary);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.card-info { padding: 20px; }
+.date { color: var(--primary); font-size: 0.85rem; font-weight: bold; }
+.card-info h3 { margin: 10px 0; font-size: 1.2rem; }
+.venue { color: #888; font-size: 0.9rem; margin-bottom: 15px; }
+
+.know-more {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid var(--primary);
+}
+
+.view-more-container { text-align: center; margin-top: 50px; }
+.outline-btn {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+footer {
+    background: rgba(0,0,0,0.9);
+    color: #64748b;
+    padding: 80px 20px; text-align: center;
+    border-top: 1px solid #222;
+}
+.footer-links a { color: var(--white); text-decoration: none; margin: 0 15px; font-weight: 600; transition: 0.3s; }
+.footer-links a:hover { color: var(--primary); }
+.copyright { margin-top: 30px; font-size: 0.85rem; opacity: 0.5; }
+
+/* Modal Overlay - Darkens and blurs background */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px); /* Blur effect */
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Card Style */
+.modal-card {
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    border-top: 4px solid #ff4b4b; /* Red accent for logout */
+    animation: modalPop 0.3s ease-out;
+}
+
+@keyframes modalPop {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-icon { font-size: 2.5rem; margin-bottom: 10px; }
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.cancel-btn, .logout-confirm-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cancel-btn {
+    background: transparent;
+    border: 1px solid #444;
+    color: white;
+}
+
+.logout-confirm-btn {
+    background: #ff4b4b;
+    border: none;
+    color: white;
+}
+
+.logout-confirm-btn:hover {
+    box-shadow: 0 0 15px rgba(255, 75, 75, 0.4);
+}

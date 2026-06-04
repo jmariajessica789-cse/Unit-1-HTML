@@ -1,0 +1,113 @@
+:root {
+    --primary: #00f2ff;
+    --secondary: #7000ff;
+    --dark: #050505;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body.profile-page {
+    background: linear-gradient(rgba(5, 5, 5, 0.94), rgba(5, 5, 5, 0.94)), 
+                url('https://images.unsplash.com/photo-1459749411177-042180ce673c?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header {
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    border-bottom: 1px solid #222;
+}
+
+.header-container {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
+}
+
+.logo span { color: var(--primary); font-weight: 800; text-shadow: 0 0 10px var(--primary); }
+.back-link { color: #888; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.back-link:hover { color: var(--primary); }
+
+/* Profile Card Area */
+.profile-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 50px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border-top: 4px solid var(--secondary);
+}
+
+.user-id-section {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.avatar-circle {
+    width: 80px; height: 80px;
+    background: linear-gradient(45deg, var(--secondary), var(--primary));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+}
+
+.user-meta h2 { margin: 0; font-size: 1.8rem; }
+.membership-tag { color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
+
+.cyber-divider { border: 0; border-top: 1px solid #333; margin: 20px 0; }
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.detail-item label {
+    display: block; font-size: 0.7rem; color: #666;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;
+}
+
+.detail-item p { margin: 0; font-weight: 600; font-size: 1rem; color: #eee; }
+.status-verified { color: #00ff88 !important; }
+
+/* Buttons */
+.profile-actions { display: flex; flex-direction: column; gap: 15px; }
+
+.edit-btn, .ticket-link {
+    text-align: center;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.edit-btn { background: rgba(255,255,255,0.05); color: white; border: 1px solid #333; }
+.ticket-link { background: var(--primary); color: black; }
+
+.edit-btn:hover { background: #222; }
+.ticket-link:hover { box-shadow: 0 0 20px var(--primary); transform: translateY(-2px); }

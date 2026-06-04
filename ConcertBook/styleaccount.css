@@ -1,0 +1,288 @@
+:root {
+    --primary: #8b5cf6; /* Electric Violet */
+    --accent: #d946ef;  /* Fuchsia */
+    --dark: #0f172a;    /* Deep Navy */
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body.account-page {
+    /* Matching the background style of your other pages */
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), 
+                url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    color: var(--white);
+    min-height: 100vh;
+}
+
+/* Header Update */
+.account-header {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.account-header h1 { font-size: 1.5rem; margin: 0; font-weight: 300; }
+.account-header h1 span { color: var(--primary); font-weight: 800; }
+.back-link { text-decoration: none; color: #94a3b8; font-weight: 600; transition: 0.3s; }
+.back-link:hover { color: var(--primary); }
+
+.container { padding: 40px 10%; max-width: 800px; margin: 0 auto; }
+
+/* Ticket Stub Redesign - Glass Style */
+.ticket-stub {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    display: flex;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 5px solid var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.ticket-stub:hover { transform: scale(1.02); }
+.ticket-stub.past { opacity: 0.6; filter: grayscale(0.5); border-left-color: #475569; }
+
+.stub-info { padding: 25px; flex: 2; }
+.stub-info h2 { margin: 10px 0; font-size: 1.3rem; }
+.stub-info p { color: #94a3b8; margin: 5px 0; font-size: 0.9rem; }
+
+.stub-action { 
+    padding: 25px; 
+    flex: 1; 
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 2px dashed rgba(255, 255, 255, 0.1);
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.badge { 
+    font-size: 0.7rem; 
+    text-transform: uppercase; 
+    font-weight: 800; 
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+/* Settings Card Redesign */
+.settings-card { 
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    padding: 40px; 
+    border-radius: 24px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.input-group { margin-bottom: 25px; }
+.input-group label { 
+    display: block; 
+    margin-bottom: 10px; 
+    font-weight: 600; 
+    font-size: 0.8rem; 
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input { 
+    width: 100%; 
+    padding: 14px; 
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 12px; 
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus { border-color: var(--primary); background: rgba(0,0,0,0.4); }
+
+.divider { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 30px 0; }
+
+/* Buttons */
+.btn-primary { 
+    background: linear-gradient(45deg, var(--primary), var(--accent)); 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    border-radius: 12px; 
+    font-weight: 800;
+    cursor: pointer; 
+    width: 100%; 
+    transition: 0.3s;
+}
+
+.btn-primary:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3); }
+
+.btn-download {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-outline { 
+    background: transparent; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    color: white;
+    padding: 12px; 
+    border-radius: 12px; 
+    cursor: pointer; 
+    margin-bottom: 20px; 
+    width: 100%;
+}
+/* Empty State Styling */
+.empty-state-card {
+    text-align: center;
+    padding: 60px 20px;
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.empty-icon { font-size: 4rem; margin-bottom: 20px; opacity: 0.5; }
+
+.btn-primary-link {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-primary-link:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4); }
+
+/* Ticket details */
+.booking-id-text {
+    font-size: 0.7rem;
+    color: var(--primary);
+    margin-top: 15px;
+    font-family: monospace;
+}
+
+.btn-cancel {
+    margin-top: 10px;
+    background: transparent;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cancel:hover { background: #ff4d4d; color: white; }
+
+/* Entry Animation */
+.animated-entry {
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Modal Overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Card */
+.modal-card {
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+    border-top: 4px solid var(--primary);
+    position: relative;
+    animation: modalSlide 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes modalSlide {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* QR Box */
+.qr-box {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.qr-box img {
+    display: block;
+    width: 100%;
+}
+
+.qr-details h4 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.qr-details p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin: 5px 0;
+}
+
+.btn-danger {
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    background: #cc0000 !important;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Ensure the second modal follows the same blur and center logic as the QR one */
+#cancelModal.modal-overlay {
+    z-index: 10000; /* Higher than the QR modal just in case */
+}
