@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Tables Task-1</title>
+
+    <!-- Basic Table Styling -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: lightgray;
+        }
+        caption {
+            font-weight: bold;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Tables Example</h1>
+
+    <!-- Basic Table with Caption -->
+    <table>
+        <caption>Student Marks Table</caption>
+
+        <!-- Table Header -->
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+
+        <!-- Table Rows -->
+        <tr>
+            <td>Alice</td>
+            <td>Science</td>
+            <td>95</td>
+        </tr>
+
+        <tr>
+            <td>Jack</td>
+            <td>Computer Science</td>
+            <td>96</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <!-- Rowspan and Colspan Example -->
+    <table>
+        <caption>Class Timetable</caption>
+
+        <tr>
+            <th>Day</th>
+            <th>9-10</th>
+            <th>10-11</th>
+            <th>11-12</th>
+        </tr>
+
+        <tr>
+            <td>Monday</td>
+            <td rowspan="2">Maths</td>
+            <td>English</td>
+            <td>Science</td>
+        </tr>
+
+        <tr>
+            <td>Tuesday</td>
+            <td colspan="2">Computer Lab</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

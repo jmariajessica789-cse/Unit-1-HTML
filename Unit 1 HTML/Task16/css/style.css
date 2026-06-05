@@ -1,0 +1,30 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+nav {
+    background: #333;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+h1 {
+    color: darkblue;
+}
+
+form input, form textarea {
+    width: 200px;
+    padding: 8px;
+}

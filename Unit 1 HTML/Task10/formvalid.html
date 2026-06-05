@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Form Validation</title>
+
+    <style>
+        form {
+            width: 350px;
+            padding: 15px;
+            border: 1px solid black;
+        }
+        fieldset {
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form action="#" method="post">
+
+        <!-- Personal Details Group -->
+        <fieldset>
+            <legend>Personal Details</legend>
+
+            <label>Full Name:</label>
+            <input type="text"
+                   placeholder="Enter your name"
+                   required
+                   minlength="3"
+                   maxlength="20">
+
+            <label>Email:</label>
+            <input type="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label>Age:</label>
+            <input type="number"
+                   min="18"
+                   max="60"
+                   required>
+        </fieldset>
+
+        <!-- Account Details Group -->
+        <fieldset>
+            <legend>Account Details</legend>
+
+            <label>Password:</label>
+            <input type="password"
+                   required
+                   minlength="6">
+
+            <label>Phone Number:</label>
+            <input type="text"
+                   placeholder="10 digit number"
+                   pattern="[0-9]{10}"
+                   required>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+</body>
+</html>

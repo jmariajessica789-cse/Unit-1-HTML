@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets | ConcertBook</title>
+    <link rel="stylesheet" href="stylebookwon.css">
+    <link rel="icon" href="music-svgrepo-com.svg" type="image/svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="booking-page">
+
+    <div class="booking-container glass-card">
+        <header class="booking-header">
+            <h1>Concert<span>Book</span></h1>
+        </header>
+
+        <section class="event-summary">
+            <div class="event-text">
+                <h2>The Wonderment Tour | A.R. Rahman</h2>
+                <p>Sat, 14 Feb | 6:30 PM • JN Stadium, Chennai</p>
+            </div>
+            <img class="stadium-map" src="wonder.Screenshot 2026-01-26 143117.png" alt="Seating Chart">
+        </section>
+
+        <section class="booking-form">
+            <h3>Select Your Experience</h3>
+            
+            <div class="input-group">
+                <label for="type">Ticket Category</label>
+                <select id="type" onchange="calculateTotal()">
+                    <option value="1799">Block C - ₹1,799</option>
+                    <option value="2299">Block D - ₹2,299</option>
+                    <option value="2299">Block E - ₹2,299</option>
+                    <option value="4000">ARR Fanpit - ₹4,000</option>
+                    <option value="5000">VIP Fanpit - ₹5,000</option>
+                    <option value="14999">Platinum - ₹14,999</option>
+                    <option value="15999">VIP Deck - ₹15,999</option>
+                    <option value="16000">ARR Fanpit (Tier 1) - ₹16,000</option>
+                    <option value="19999">VIP Lounge - ₹19,999</option>
+                    <option value="20000">VIP Fanpit (Premium) - ₹20,000</option>
+                    <option value="750000">VIP Family Lounge - ₹7,50,000 (Group of 5)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="qty">Number of Tickets</label>
+                <input type="number" id="qty" value="1" min="1" max="10" oninput="calculateTotal()">
+            </div>
+
+            <div class="total-display">
+                <p>Total Amount: <span id="totalPrice">₹1,799</span></p>
+            </div>
+
+            <button class="confirm-btn" onclick="confirmBooking()">Confirm Booking</button>
+        </section>
+    </div>
+    <div id="bookingModal" class="modal-overlay">
+    <div class="modal-card glass-card">
+        <div class="modal-icon">🎟️</div>
+        <h2>Confirm Your Booking</h2>
+        <div id="modalDetails" class="modal-details">
+            </div>
+        <div class="modal-actions">
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+            <button class="pay-btn" onclick="finalizeBooking()">Proceed to Pay</button>
+        </div>
+    </div>
+</div>
+
+    <script src="bookwon.js"></script>
+</body>
+</html>

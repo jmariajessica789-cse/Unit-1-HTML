@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Block vs Inline Example</title>
+
+    <style>
+        /* Block styling */
+        .block-box {
+            background-color: lightblue;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        /* Inline styling */
+        .inline-text {
+            background-color: yellow;
+        }
+
+        /* Inline-Block example */
+        .inline-block-box {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background-color: lightgreen;
+            text-align: center;
+            line-height: 50px;
+            margin: 5px;
+        }
+
+        /* Flex layout example */
+        .flex-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .flex-item {
+            background-color: orange;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Block vs Inline Elements</h1>
+
+    <!-- Block Elements -->
+    <h2>Block Elements</h2>
+    <div class="block-box">This is a DIV (Block Element)</div>
+    <p class="block-box">This is a Paragraph (Block Element)</p>
+
+    <!-- Inline Elements -->
+    <h2>Inline Elements</h2>
+    <p>
+        This is <span class="inline-text">SPAN</span> and
+        <strong class="inline-text">STRONG</strong> (Inline Elements).
+    </p>
+
+    <!-- Inline-Block Example -->
+    <h2>Inline-Block Example</h2>
+    <div class="inline-block-box">Box 1</div>
+    <div class="inline-block-box">Box 2</div>
+    <div class="inline-block-box">Box 3</div>
+    <div class="inline-block-box">Box 4</div>
+
+
+    <!-- Flex Layout Example -->
+    <h2>Flex Layout Example</h2>
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+        <div class="flex-item">Item 4</div>
+    </div>
+
+</body>
+</html>

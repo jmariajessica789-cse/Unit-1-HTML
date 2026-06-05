@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Pale White Dot Tickets | ConcertBook</title>
+    <link rel="stylesheet" href="stylebookpale.css">
+    <link rel="icon" href="music-svgrepo-com.svg" type="image/svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="booking-page">
+
+    <div class="booking-container glass-card">
+        <header class="booking-header">
+            <h1>Concert<span>Book</span></h1>
+        </header>
+
+        <section class="event-summary">
+            <div class="event-text">
+                <h2>Pale White Dot</h2>
+                <p>Sun, 1 Feb | 5:30 PM • Chennai</p>
+            </div>
+            <div class="ethereal-divider"></div>
+        </section>
+
+        <section class="booking-form">
+            <h3>Ticket Booking</h3>
+            
+            <div class="input-group">
+                <label for="type">Ticket Type</label>
+                <select id="type" onchange="calculateTotal()">
+                    <option value="400">Regular - ₹400</option>
+                </select>
+                <p class="ticket-info">- This ticket grants entry to one individual.</p>
+            </div>
+
+            <div class="input-group">
+                <label for="qty">Quantity</label>
+                <input type="number" id="qty" value="1" min="1" max="10" oninput="calculateTotal()">
+            </div>
+
+            <div class="total-display">
+                <p>Total Payable</p>
+                <h2 id="totalPrice">₹400</h2>
+            </div>
+
+            <button class="confirm-btn" onclick="confirmBooking()">Confirm Booking</button>
+        </section>
+    </div>
+    <div id="bookingModal" class="modal-overlay">
+    <div class="modal-card glass-card">
+        <div class="modal-icon">🎟️</div>
+        <h2>Confirm Your Booking</h2>
+        <div id="modalDetails" class="modal-details">
+            </div>
+        <div class="modal-actions">
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+            <button class="pay-btn" onclick="finalizeBooking()">Proceed to Pay</button>
+        </div>
+    </div>
+</div>
+
+    <script src="bookpale.js"></script>
+</body>
+</html>
